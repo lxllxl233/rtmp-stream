@@ -1,19 +1,21 @@
 package com.woqiyounai.rtmp.response.data;
 
+import com.woqiyounai.rtmp.bean.ResultUrl;
+
 import java.io.Serializable;
 
 public class PullStreamData implements Serializable {
     private String id;
     private String mark;
-    private String rtmpUrl;
+    private ResultUrl resultUrl;
 
-    public PullStreamData( ) {
+    public PullStreamData() {
     }
 
-    public PullStreamData(String id, String mark, String rtmpUrl) {
+    public PullStreamData(String id, String mark, ResultUrl resultUrl) {
         this.id = id;
         this.mark = mark;
-        this.rtmpUrl = rtmpUrl;
+        this.resultUrl = resultUrl;
     }
 
     public String getId() {
@@ -32,12 +34,12 @@ public class PullStreamData implements Serializable {
         this.mark = mark;
     }
 
-    public String getRtmpUrl() {
-        return rtmpUrl;
+    public ResultUrl getResultUrl() {
+        return resultUrl;
     }
 
-    public void setRtmpUrl(String rtmpUrl) {
-        this.rtmpUrl = rtmpUrl;
+    public void setResultUrl(ResultUrl resultUrl) {
+        this.resultUrl = resultUrl;
     }
 
     @Override
@@ -45,7 +47,7 @@ public class PullStreamData implements Serializable {
         return "PullStreamData{" +
                 "id='" + id + '\'' +
                 ", mark='" + mark + '\'' +
-                ", rtmpUrl='" + rtmpUrl + '\'' +
+                ", resultUrl=" + resultUrl +
                 '}';
     }
 }

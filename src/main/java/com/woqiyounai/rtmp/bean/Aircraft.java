@@ -5,23 +5,33 @@ import java.io.Serializable;
 public class Aircraft implements Serializable {
     private String name;
     private String ip;
-    private String port;
-    private String suffix;
+    private String id;
+    private String mark;
     private String rtspUrl;
     private String rtmpUrl;
-    private String mark;
+    private ResultUrl resultUrl;
 
     public Aircraft() {
     }
 
-    public Aircraft(String name, String ip, String port, String suffix, String rtspUrl, String rtmpUrl, String mark) {
+    public Aircraft(String name, String ip, String mark, String rtspUrl, String rtmpUrl, ResultUrl resultUrl) {
         this.name = name;
         this.ip = ip;
-        this.port = port;
-        this.suffix = suffix;
+        this.mark = mark;
         this.rtspUrl = rtspUrl;
         this.rtmpUrl = rtmpUrl;
+        this.resultUrl = resultUrl;
+        this.id = null;
+    }
+
+    public Aircraft(String name, String ip, String id, String mark, String rtspUrl, String rtmpUrl, ResultUrl resultUrl) {
+        this.name = name;
+        this.ip = ip;
+        this.id = id;
         this.mark = mark;
+        this.rtspUrl = rtspUrl;
+        this.rtmpUrl = rtmpUrl;
+        this.resultUrl = resultUrl;
     }
 
     public String getName() {
@@ -40,6 +50,14 @@ public class Aircraft implements Serializable {
         this.ip = ip;
     }
 
+    public String getMark() {
+        return mark;
+    }
+
+    public void setMark(String mark) {
+        this.mark = mark;
+    }
+
     public String getRtspUrl() {
         return rtspUrl;
     }
@@ -56,28 +74,20 @@ public class Aircraft implements Serializable {
         this.rtmpUrl = rtmpUrl;
     }
 
-    public String getMark() {
-        return mark;
+    public ResultUrl getResultUrl() {
+        return resultUrl;
     }
 
-    public void setMark(String mark) {
-        this.mark = mark;
+    public void setResultUrl(ResultUrl resultUrl) {
+        this.resultUrl = resultUrl;
     }
 
-    public String getPort() {
-        return port;
+    public String getId() {
+        return id;
     }
 
-    public void setPort(String port) {
-        this.port = port;
-    }
-
-    public String getSuffix() {
-        return suffix;
-    }
-
-    public void setSuffix(String suffix) {
-        this.suffix = suffix;
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override
@@ -85,11 +95,10 @@ public class Aircraft implements Serializable {
         return "Aircraft{" +
                 "name='" + name + '\'' +
                 ", ip='" + ip + '\'' +
-                ", port='" + port + '\'' +
-                ", suffix='" + suffix + '\'' +
+                ", mark='" + mark + '\'' +
                 ", rtspUrl='" + rtspUrl + '\'' +
                 ", rtmpUrl='" + rtmpUrl + '\'' +
-                ", mark='" + mark + '\'' +
+                ", resultUrl=" + resultUrl +
                 '}';
     }
 }
