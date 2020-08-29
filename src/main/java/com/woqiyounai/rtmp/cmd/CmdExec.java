@@ -90,7 +90,6 @@ public class CmdExec {
         Runtime runtime = Runtime.getRuntime();
         try {
             String id = null;
-            //ffmpeg -re -stream_loop -1 -i rtsp://192.168.3.16:8554/hello  -vcodec copy -acodec copy -f flv rtmp://109366.livepush.myqcloud.com/live/guilin7b77b1aa
             String command = ffmpegPath.replaceAll("#rtspUrl",rtspUrl).replaceAll("#rtmpUrl",rtmpUrl);
             System.out.println(command);
             Process exec = runtime.exec(command);
